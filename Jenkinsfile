@@ -9,7 +9,7 @@ pipeline  {
     stage("Stage2") {
       steps {
         script {
-          docker.image('hello-workd').inside {
+          docker.image('hello-world').inside {
             sh 'ls -la'
             sh 'hostname'
           }
