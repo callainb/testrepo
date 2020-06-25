@@ -10,8 +10,9 @@ pipeline  {
       steps {
         script {
           docker.image('hello-world').inside {
+            echo "${it}"
             sh 'ls -la'
-            sh 'hostname'
+            //sh 'hostname'
           }
         }
       }
