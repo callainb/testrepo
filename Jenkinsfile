@@ -8,9 +8,11 @@ pipeline  {
     }
     stage("Stage2") {
       steps {
-        docker.image('hello-workd').inside {
-          sh 'ls -la'
-          sh 'hostname'
+        script {
+          docker.image('hello-workd').inside {
+            sh 'ls -la'
+            sh 'hostname'
+          }
         }
       }
     }
